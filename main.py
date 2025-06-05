@@ -5,7 +5,7 @@ import aiohttp
 import io
 
 TOKEN = os.environ.get("DISCORD_TOKEN")
-DESTINATION_CHANNEL_ID = 1378860563748098048
+DESTINATION_CHANNEL_ID = os.environ.get("LOG_CHANNEL_ID")
 IGNORED_ROLE_NAMES = ["Bot 🤖"]
 
 intents = discord.Intents.default()
