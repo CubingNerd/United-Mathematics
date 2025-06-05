@@ -3,27 +3,10 @@ import discord
 from discord.ext import commands
 import aiohttp
 import io
-
-from flask import Flask
-from threading import Thread
-
-app = Flask('')
-
-@app.route('/')
-def home():
-    return "Bot is alive!"
-
-def run():
-    app.run(host='0.0.0.0', port=8080)
-
-def keep_alive():
-    t = Thread(target=run)
-    t.daemon = True
-    t.start()
-
+from keep_alive import keep_alive
 
 TOKEN = os.environ.get("DISCORD_TOKEN")
-DESTINATION_CHANNEL_ID = os.environ.get("LOG_CHANNEL_ID")
+DESTINATION_CHANNEL_ID = int(os.environ.get("LOG_CHANNEL_ID"))
 IGNORED_ROLE_NAMES = ["Bot 🤖"]
 
 intents = discord.Intents.default()
