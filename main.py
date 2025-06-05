@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 import aiohttp
 import io
+from keep_alive import keep_alive
 
 TOKEN = os.environ.get("DISCORD_TOKEN")
 DESTINATION_CHANNEL_ID = os.environ.get("LOG_CHANNEL_ID")
@@ -128,4 +129,5 @@ async def on_message_delete(message):
     else:
         await dest.send(log_line, files=files)
 
+keep_alive()
 bot.run(TOKEN)
