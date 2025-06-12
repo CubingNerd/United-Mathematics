@@ -7,7 +7,7 @@ from keep_alive import keep_alive
 
 TOKEN = os.environ.get("DISCORD_TOKEN")
 DESTINATION_CHANNEL_ID = int(os.environ.get("LOG_CHANNEL_ID"))
-IGNORED_ROLE_NAMES = ["Bot 🤖"]
+IGNORED_ROLE_NAMES = ["Bot 🤖", "Bot"]
 
 intents = discord.Intents.default()
 intents.message_content = True
